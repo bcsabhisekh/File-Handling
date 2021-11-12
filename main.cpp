@@ -213,8 +213,7 @@ void admin_login(void)
     inFile.seekg(0, ios::beg);
     while (inFile.read((char*)(&obj), sizeof(Sepoy)))
     {
-        obj.Display();
-        if (obj.getsepoy_id() == id && password == obj.get_password())
+        if (obj.getsepoy_id() == id && password == obj.get_password() && obj.get_post()=="Officer")
         {
             int choice;
             found = true;
